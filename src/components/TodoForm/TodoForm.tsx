@@ -20,14 +20,14 @@ export const TodoForm = () => {
         }
     })
     const createTodoHandler = (data: { title: string }) => {
-        if (data.title === "") {
+        if (data.title.trim() === "") {
             window.alert("Введите текст")
             return
         }
         dispatch(
             createTodo({
                 id: Date.now(),
-                title: data.title,
+                title: data.title.trim(),
                 status: ETodoStatus.active,
             })
         )
