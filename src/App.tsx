@@ -2,9 +2,10 @@ import {useEffect} from "react";
 import {AppDispatch, autoAuth} from "./store";
 import {useDispatch} from "react-redux";
 import {RouterProvider} from "react-router-dom";
-import {Container} from "@mui/material";
 
 import {router} from "./router";
+
+import {StyledContainer} from "./components/UI/StyledContainer.ts";
 
 import "./App.css"
 
@@ -19,11 +20,9 @@ function App() {
 
     return (
         <div className="app">
-            <div className="layout">
-                <Container>
-                    <RouterProvider router={router}/>
-                </Container>
-            </div>
+            <StyledContainer>
+                <RouterProvider router={router}/>
+            </StyledContainer>
         </div>
     )
 }

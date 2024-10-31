@@ -1,13 +1,7 @@
 .app {
   width: 100vw;
   height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   background-color: rgb(13,17,23);
-}
-.app .layout {
-  padding: 8px 0;
 }
 
 html, body, div, span, applet, object, iframe,

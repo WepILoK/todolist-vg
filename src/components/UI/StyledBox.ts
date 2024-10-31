@@ -7,5 +7,8 @@ export const StyledBox = styled(Box)`
     background-color: #ffffff;
     border-radius: 8px;
     padding: 16px;
-    width: 350px;
+    margin: 14px 0;
+    &:nth-child(2) {
+        margin-top: 40px;
+    }
 `

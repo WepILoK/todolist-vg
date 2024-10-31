@@ -1,17 +1,20 @@
-import {Button, IconButton, InputAdornment, TextField, Typography} from "@mui/material";
+import {useState} from "react";
 import {Controller, useForm} from "react-hook-form";
 import {useDispatch, useSelector} from "react-redux";
+import {Button, IconButton, InputAdornment, TextField, Typography} from "@mui/material";
 import {yupResolver} from "@hookform/resolvers/yup";
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import {Navigate} from "react-router-dom";
-import {IAuthAction, login, selectIsAuth} from "../../store";
+
+import {AppDispatch, IAuthAction, login, selectIsAuth} from "../../store";
 import {authFormSchema} from "./schema.ts";
-import {useState} from "react";
-import {StyledBox} from "../../components/UI/StyledBox.tsx";
+
+import {StyledBox} from "../../components/UI/StyledBox.ts";
+
 
 export const AuthPage = () => {
-    const dispatch = useDispatch()
+    const dispatch = useDispatch<AppDispatch>()
     const isAuth = useSelector(selectIsAuth)
     const [showPassword, setShowPassword] = useState(false);
 
@@ -36,7 +39,7 @@ export const AuthPage = () => {
 
     return (
         <StyledBox>
-            <Typography variant="h5" mb={'12px'}>
+            <Typography variant="h5" mb='12px'>
                 Авторизация
             </Typography>
             <form onSubmit={handleSubmit(onSubmit)}>
@@ -50,9 +53,9 @@ export const AuthPage = () => {
                             error={!!fieldState.error}
                             onChange={field.onChange}
                             value={field.value}
-                            type={"text"}
+                            type="text"
                             fullWidth
-                            label={"Логин"}
+                            label="Логин"
                             variant="outlined"
                             sx={{pb: "12px"}}
                         />
@@ -81,7 +84,7 @@ export const AuthPage = () => {
                                 </InputAdornment>,
                             }}
                             fullWidth
-                            label={"Пароль"}
+                            label="Пароль"
                             variant="outlined"
                         />
                     )}
